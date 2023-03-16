@@ -13,6 +13,7 @@ export class PanelComponent implements OnInit {
   public rodada: number = 0;
   public rodadaFrase: Frases;
   public isDisabled: boolean = false;
+  public progresso: number = 0;
 
   constructor() {
     this.rodadaFrase = this.frases[this.rodada];
@@ -29,12 +30,14 @@ export class PanelComponent implements OnInit {
     } else {
       console.log('Errou');
     }
+
     if (this.frases.length <= this.rodada + 1) {
       this.isDisabled = true;
     } else {
       this.rodadaFrase = this.frases[this.rodada];
     }
 
+    this.progresso += 100 / this.frases.length;
     this.rodada++;
   }
 }
