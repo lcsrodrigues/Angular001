@@ -31,13 +31,12 @@ export class PanelComponent implements OnInit {
       console.log('Errou');
     }
 
-    if (this.frases.length <= this.rodada + 1) {
+    if (this.rodada >= this.frases.length - 1) {
       this.isDisabled = true;
     } else {
+      this.rodada++;
       this.rodadaFrase = this.frases[this.rodada];
     }
-
     this.progresso += 100 / this.frases.length;
-    this.rodada++;
   }
 }
