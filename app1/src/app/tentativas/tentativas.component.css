@@ -1,3 +1,7 @@
 i {
   font-size: 30px;
 }
+
+.bi-balloon-heart-fill::before {
+  color: #ff0000 !important;
+}
